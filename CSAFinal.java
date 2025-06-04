@@ -28,3 +28,15 @@ public class BudgetTracker {
         // try loading from file first
         loadTransactions(transactions);
 
+       System.out.println("Welcome to the Budget Tracker!");
+        boolean running = true;
+
+        while (running) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Add Transaction");
+            System.out.println("2. View Transactions");
+            System.out.println("3. Show Balance");
+            System.out.println("4. Save Transactions");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+
