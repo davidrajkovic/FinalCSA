@@ -51,3 +51,14 @@ public class BudgetTracker {
                 transactions.add(new Transaction(description, amount));
                 System.out.println("Transaction added.");
             } 
+       else if (choice == 2) {
+                System.out.println("\nAll Transactions:");
+                for (Transaction t : transactions) {
+                    System.out.println(t);
+                }
+            } 
+            else if (choice == 3) {
+                double total = 0;
+                for (Transaction t : transactions) {
+                    total += t.amount;
+                }
