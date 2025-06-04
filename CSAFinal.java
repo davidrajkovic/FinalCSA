@@ -73,3 +73,16 @@ public class BudgetTracker {
             } 
             else {
                 System.out.println("Not a valid option.");
+       }
+        }
+
+        scanner.close();
+    }
+
+    // save to a text file
+    public static void saveTransactions(ArrayList<Transaction> transactions) {
+        try {
+            PrintWriter writer = new PrintWriter("transactions.txt");
+            for (Transaction t : transactions) {
+                writer.println(t.description + "," + t.amount);
+            }
