@@ -6,4 +6,9 @@ import java.io.IOException;
 
 
 
+public class BudgetTracker {
+
+    static class Transaction {
+        String description;
+        double amount;
 
