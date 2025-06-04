@@ -40,3 +40,14 @@ public class BudgetTracker {
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
 
+               int choice = scanner.nextInt();
+            scanner.nextLine(); // classic fix lol
+
+            if (choice == 1) {
+                System.out.print("Enter description: ");
+                String description = scanner.nextLine();
+                System.out.print("Enter amount (positive = income, negative = expense): ");
+                double amount = scanner.nextDouble();
+                transactions.add(new Transaction(description, amount));
+                System.out.println("Transaction added.");
+            } 
