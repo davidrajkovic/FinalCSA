@@ -111,3 +111,17 @@ public class BudgetTracker {
                 writer.println(t.description + "," + t.amount);
             }
             writer.close();
+            System.out.println("Transactions saved to file.");
+        } catch (IOException e) {
+            System.out.println("Error saving to file.");
+        }
+    }
+
+    // load from the file at the start
+    public static void loadTransactions(ArrayList<Transaction> transactions) {
+        try {
+            File file = new File("transactions.txt");
+            Scanner fileScanner = new Scanner(file);
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String[] parts = line.split(",");
