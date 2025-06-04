@@ -16,4 +16,15 @@ public class BudgetTracker {
             this.amount = amount;
         }
 
+     public String toString() {
+            return description + ": $" + amount;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Transaction> transactions = new ArrayList<>();
+
+        // try loading from file first
+        loadTransactions(transactions);
 
