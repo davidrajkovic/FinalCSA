@@ -86,3 +86,28 @@ public class BudgetTracker {
             for (Transaction t : transactions) {
                 writer.println(t.description + "," + t.amount);
             }
+     System.out.println("Current Balance: $" + total);
+            } 
+            else if (choice == 4) {
+                saveTransactions(transactions);
+            } 
+            else if (choice == 5) {
+                System.out.println("Goodbye!");
+                running = false;
+            } 
+            else {
+                System.out.println("Not a valid option.");
+            }
+        }
+
+        scanner.close();
+    }
+
+    // save to a text file
+    public static void saveTransactions(ArrayList<Transaction> transactions) {
+        try {
+            PrintWriter writer = new PrintWriter("transactions.txt");
+            for (Transaction t : transactions) {
+                writer.println(t.description + "," + t.amount);
+            }
+            writer.close();
