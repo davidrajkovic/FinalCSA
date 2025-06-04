@@ -125,3 +125,18 @@ public class BudgetTracker {
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
                 String[] parts = line.split(",");
+    if (parts.length == 2) {
+                    String description = parts[0];
+                    double amount = Double.parseDouble(parts[1]);
+                    transactions.add(new Transaction(description, amount));
+                }
+            }
+            fileScanner.close();
+            System.out.println("Transactions loaded from file.");
+        } catch (IOException e) {
+            System.out.println("No saved transactions found (yet).");
+        }
+    }
+}
+
+
