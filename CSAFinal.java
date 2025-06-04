@@ -62,3 +62,14 @@ public class BudgetTracker {
                 for (Transaction t : transactions) {
                     total += t.amount;
                 }
+    System.out.println("Current Balance: $" + total);
+            } 
+            else if (choice == 4) {
+                saveTransactions(transactions);
+            } 
+            else if (choice == 5) {
+                System.out.println("Goodbye!");
+                running = false;
+            } 
+            else {
+                System.out.println("Not a valid option.");
